@@ -1,4 +1,4 @@
---SHAZAM
-SELECT score score, name FROM second_TABLE
+-- no name order
+SELECT score, name FROM second_table
 WHERE name <> ''
 GROUP BY score DESC, name DESC;
