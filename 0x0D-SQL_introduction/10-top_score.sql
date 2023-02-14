@@ -1,2 +1,2 @@
--- shows rows and decending
-select score, name from second_table order by score desc;
+-- shows rows and dec
+SELECT score, name FROM second_table ORDER score DESC;
