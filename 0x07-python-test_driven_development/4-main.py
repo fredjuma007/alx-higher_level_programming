@@ -1,9 +1,4 @@
 #!/usr/bin/python3
-"""
-Module 4-print_square
-Contains method that prints square with #'s
-Takes in an int size
-"""
 print_square = __import__('4-print_square').print_square
 
 print_square(4)

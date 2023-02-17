@@ -1,9 +1,4 @@
 #!/usr/bin/python3
-"""
-Module 5-text_indentation
-Contains method that prints text with 2 new lines after each ".", "?", and ":"
-Takes in a string
-"""
 text_indentation = __import__('5-text_indentation').text_indentation
 
 text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
