@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Module 2-matrix_divided
+Contains method that divides all elements of a matrix and returns new matrix
+Requires same size lists of ints or floats, and max two decimal places
+"""
 print_square = __import__('4-print_square').print_square
 
 print_square(4)
