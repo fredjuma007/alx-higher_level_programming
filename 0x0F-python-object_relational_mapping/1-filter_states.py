@@ -4,7 +4,6 @@ return states starting with 'N'
 parameters given to script: username, password, database
 """
 
-
 import MySQLdb
 from sys import argv
 
