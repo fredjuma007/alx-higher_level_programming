@@ -20,6 +20,7 @@ def main(args):
     states = cur.fetchall()
     print(", ".join(map(lambda x: "%s" % x, states)))
 
+
 if __name__ == "__main__":
     import sys
     import MySQLdb
