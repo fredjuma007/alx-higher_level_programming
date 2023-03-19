@@ -1,9 +1,8 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
-return matching state; safe from MySQL injection
+return matching states; safe from MySQL injections
 parameters given to script: username, password, database, state to match
 """
-
 
 import MySQLdb
 from sys import argv
