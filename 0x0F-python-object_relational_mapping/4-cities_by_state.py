@@ -1,28 +1,30 @@
 #!/usr/bin/python3
+"""
+return info from both tables (tables 'cities' 'states)
+parameters given to script: username, password, database
+"""
+
 import MySQLdb
-import sys
+from sys import argv
 
-if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    dbname = sys.argv[3]
+if __name__ == "__main__":
 
-    # Connect to MySQL database
-    db = MySQLdb.connect(host='localhost', port=3306, user=username, passwd=password, db=dbname)
+    # connect to database
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=argv[1],
+                         passwd=argv[2],
+                         db=argv[3])
 
-    # Create cursor
+    # create cursor to exec queries using SQL; join two tables for all info
     cursor = db.cursor()
+    sql_cmd = """SELECT cities.id, cities.name, states.name
+                 FROM states
+                 INNER JOIN cities ON states.id = cities.state_id
+                 ORDER BY cities.id ASC"""
+    cursor.execute(sql_cmd)
 
-    # Execute SQL query
-    cursor.execute('SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON cities.state_id = states.id ORDER BY cities.id ASC')
-
-    # Fetch all results
-    results = cursor.fetchall()
-
-    # Print results
-    for row in results:
+    for row in cursor.fetchall():
         print(row)
-
-    # Close cursor and database connection
     cursor.close()
     db.close()
