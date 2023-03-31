@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+lets play fetch
+"""
+
 import urllib.request
 import sys
 
