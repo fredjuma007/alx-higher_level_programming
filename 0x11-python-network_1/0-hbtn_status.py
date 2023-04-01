@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-lets play fetch
+fetch https://intranet.hbtn.io/status; display response
 """
 
 import urllib.request
-import sys
 
-url = sys.argv[1]
-
-req = urllib.request.Request(url)
-with urllib.request.urlopen(req) as response:
-    x_request_id = response.headers.get('X-Request-Id')
-    print(f"The value of the X-Request-Id variable is: {x_request_id}")
+if __name__ == "__main__":
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+        html = response.read()
+        print('Body response:')
+        print("\t- type: {}".format(type(html)))
+        print("\t- content: {}".format(html))
+        print("\t- utf8 content: {}".format(html.decode('utf-8')))
